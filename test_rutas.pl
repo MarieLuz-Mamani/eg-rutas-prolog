@@ -19,6 +19,6 @@ test(distancias_posibles_usando_diferentes_rutas, set(Kilometros = [1711, 1772])
 
 test(recorrida_al_derecho, nondet):-totalViaje(puertoMadryn, calafate, 1711).
 
-test(recorrida_al_reves, nondet):-totalViaje(calafate, puertoMadryn, 17).
+test(recorrida_al_reves, nondet):-totalViaje(calafate, puertoMadryn, 1711).
 
 :-end_tests(rutas).
