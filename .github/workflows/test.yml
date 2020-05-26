@@ -10,11 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Install prolog
-      run: |
-        sudo apt-add-repository ppa:swi-prolog/devel -y
-        sudo apt-get update -q
-        sudo apt-get install swi-prolog-nox
+    - name: Install swipl image
+      run: docker pull swipl
 
     - name: Run test
-      run: swipl -s test_rutas.pl -g run_tests,halt -t 'halt(1)'
+      run: docker run -v $(pwd):/app swipl swipl -s app/test_rutas.pl -g run_tests
